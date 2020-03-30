@@ -3,11 +3,13 @@ const routes = express.Router();
 const ongController = require('./controllers/ongController');
 const incidentController = require('./controllers/incidentController');
 const ProfileController = require('./controllers/ProfileController');
+const SessionController = require('./controllers/SessionController');
 
 routes.get('/', function (req, res) {
     res.send('Hello Wold');
 });
 
+routes.post('/session', SessionController.create);
 
 routes.post('/ongs', ongController.create);
 routes.get('/ongs', ongController.index);
